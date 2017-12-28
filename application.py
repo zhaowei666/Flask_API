@@ -1,4 +1,4 @@
-from flask import Flask, g, request
+from flask import Flask, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from sqlalchemy import MetaData
