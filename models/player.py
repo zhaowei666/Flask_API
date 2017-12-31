@@ -1,5 +1,6 @@
 from sqlalchemy import Column, String, Integer, ForeignKey, Date, Boolean
 from base import Base
+from flask import g
 
 
 class Team(Base):
@@ -18,6 +19,15 @@ class Draft(Base):
     round = Column(Integer)
     pick = Column(Integer)
 
+    @property
+    def info(self):
+        team = g.session.query(Team).filter_by(pk=self.team_pk).one()
+        return "{}: Round {}, Pick {} by {}".format(str(self.season),
+                                             str(self.round),
+                                             str(self.pick),
+                                             team.name
+                                             )
+
 
 class Player(Base):
     __tablename__ = 'players'
@@ -26,6 +36,10 @@ class Player(Base):
     first_name = Column(String(128), nullable=False)
     last_name = Column(String(128), nullable=False)
     date_of_birth = Column(Date)
+
+    @property
+    def name(self):
+        return '{} {}'.format(self.first_name, self.last_name)
 
 
 class Game(Base):

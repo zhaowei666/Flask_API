@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="table_onload('{{ info['num_logs'] }}')">
+  <div class="container">
+    <h2>Select player</h2>
+    <select class="form-control" id="player_selection">
+      {% for name in names %}
+        <option>{{ name }}</option>
+      {% endfor %}
+    </select>
+    <a href="javascript:display_players(document.getElementById('player_selection').value)" class="btn btn-info" role="button">Submit</a>
+  </div>
+  <div class="container">
+    <h2>Profile</h2>
+    <table class="table">
+      <tr>
+        <th class="info">Name</th>
+        <th><span id="name">{{ info['profile']['name'] }}</span></th>
+      </tr>
+      <tr>
+        <th class="info">Player ID</th>
+        <th class="active"><span id="id">{{ info['profile']['id'] }}</span></th>
+      </tr>
+      <tr>
+        <th class="info">Date of Birth</th>
+        <th><span id="date_of_birth">{{ info['profile']['date_of_birth'] }}</span></th>
+      </tr>
+      <tr>
+        <th class="info">Drafted</th>
+        <th class="active"><span id="draft">{{ info['profile']['draft'] }}</span></th>
+      </tr>
+    </table>
+  </div>
+  <div class="container">
+    <h2>Stats</h2>
+    <table class="table">
+      <thead>
+        <tr class="info">
+          <th></th>
+          <th>Attempts</th>
+          <th>Completions</th>
+          <th>Completion Rate</th>
+          <th>Yards</th>
+          <th>TouchDowns</th>
+          <th>Interceptions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Season</th>
+          <th id="attempts_all">{{ info['stats']['all']['attempts'] }}</th>
+          <th id="completions_all">{{ info['stats']['all']['completions'] }}</th>
+          <th id="completion_rate_all">{{ info['stats']['all']['completion_rate'] }}</th>
+          <th id="yards_all">{{ info['stats']['all']['yards'] }}</th>
+          <th id="touchdowns_all">{{ info['stats']['all']['touchdowns'] }}</th>
+          <th id="interceptions_all">{{ info['stats']['all']['interceptions'] }}</th>
+        </tr>
+        <tr class="active">
+          <th>Match Average</th>
+          <th id="attempts_match">{{ info['stats']['match']['attempts'] }}</th>
+          <th id="completions_match">{{ info['stats']['match']['completions'] }}</th>
+          <th id="completion_rate_match"></th>
+          <th id="yards_match">{{ info['stats']['match']['yards'] }}</th>
+          <th id="touchdowns_match">{{ info['stats']['match']['touchdowns'] }}</th>
+          <th id="interceptions_match">{{ info['stats']['match']['interceptions'] }}</th>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <div class="container">
+    <h2>Game Log</h2>
+    <table class="table">
+      <thead>
+        <tr class="info">
+          <th>Week</th>
+          <th>Opponent</th>
+          <th>Home</th>
+          <th>Attempts</th>
+          <th>Completions</th>
+          <th>Completion Rate</th>
+          <th>Yards</th>
+          <th>TouchDowns</th>
+          <th>Interceptions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(100)%}
+          {% if i < info['num_logs'] %}
+            <tr id="log{{ i }}">
+              <th><span id="week_{{ i }}">{{ info['game_logs'][i]['week'] }}</span></th>
+              <th><span id="opponent_{{ i }}">{{ info['game_logs'][i]['opponent'] }}</span></th>
+              <th><span id="home_{{ i }}">{{ info['game_logs'][i]['home'] }}</span></th>
+              <th><span id="attempts_{{ i }}">{{ info['game_logs'][i]['attempts'] }}</span></th>
+              <th><span id="completions_{{ i }}">{{ info['game_logs'][i]['completions'] }}</span></th>
+              <th><span id="completion_rate">{{ info['game_logs'][i]['completion_rate'] }}</span></th>
+              <th><span id="yards_{{ i }}">{{ info['game_logs'][i]['yards'] }}</span></th>
+              <th><span id="touchdowns_{{ i }}">{{ info['game_logs'][i]['touchdowns'] }}</span></th>
+              <th><span id="interceptions_{{ i }}">{{ info['game_logs'][i]['interceptions'] }}</span></th>
+            </tr>
+          {% else %}
+             <tr id="log{{ i }}">
+              <th><span id="week_{{ i }}"></span></th>
+              <th><span id="opponent_{{ i }}"></span></th>
+              <th><span id="home_{{ i }}"></span></th>
+              <th><span id="attempts_{{ i }}"></span></th>
+              <th><span id="completions_{{ i }}"></span></th>
+              <th><span id="completion_rate"></span></th>
+              <th><span id="yards_{{ i }}"></span></th>
+              <th><span id="touchdowns_{{ i }}"></span></th>
+              <th><span id="interceptions_{{ i }}"></span></th>
+             </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+<script>
+  function display_players(name) {
+      $.post('/update_player', {
+          name: name
+      }).done(function(update_player) {
+          for (var x in update_player['profile']) {
+              $('#'+x).text(update_player['profile'][x])
+          }
+
+          for (var x in update_player['stats']['all']) {
+              $('#'+x+'_all').text(update_player['stats']['all'][x])
+          }
+          for (var x in update_player['stats']['match']) {
+              $('#'+x+'_match').text(update_player['stats']['match'][x])
+          }
+
+
+          for (var i=0; i < 100; i++) {
+              if (i < update_player['num_logs']) {
+                  $('#log' + i).show();
+                  if (i % 2 == 1) {
+                      $('#log' + i).removeClass().addClass('active')
+                  }
+                  for (var x in update_player['game_logs'][i]) {
+                      $('#'+x+'_'+i).text(update_player['game_logs'][i][x])
+                  }
+              } else {
+                  $('#log' + i).hide()
+              }
+          }
+      })
+  }
+  function table_onload(num_logs) {
+      for (var i = 0; i < 100; i++) {
+          if (i < num_logs) {
+              $('#log' + i).show();
+              if (i % 2 == 1) {
+                  $('#log' + i).removeClass().addClass('active')
+              }
+          } else {
+              $('#log' + i).hide()
+          }
+      }
+  }
+</script>

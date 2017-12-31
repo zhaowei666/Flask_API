@@ -19,9 +19,6 @@ class RunApplication(Command):
         host = 'localhost'
         port = 5000
 
-        #if open_host:
-        #    host = '0.0.0.0'
-
         self.app.run(host=host,
                      port=port,
                      debug=True,
