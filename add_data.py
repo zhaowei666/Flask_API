@@ -78,7 +78,7 @@ def add_player_performance():
         player_performance.player_pk = player.pk
         home_team = db.session.query(Team).filter_by(name=row['home_team']).one()
         away_team = db.session.query(Team).filter_by(name=row['away_team']).one()
-            game = db.session.query(Game).filter_by(week=row['week'],
+        game = db.session.query(Game).filter_by(week=row['week'],
                                                 home_team_pk=home_team.pk,
                                                 away_team_pk=away_team.pk).one()
         player_performance.game_pk = game.pk
