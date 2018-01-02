@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body onload="table_onload('{{ info['num_logs'] }}')">
+<body onload="tableOnload('{{ info['num_logs'] }}')">
   <div class="container">
     <div style="width: 50%; float:left">
       <h2>Select player</h2>
@@ -16,7 +16,7 @@
           <option>{{ name }}</option>
         {% endfor %}
       </select>
-      <a href="javascript:display_players($('#player_selection').val())" class="btn btn-success" role="button">Submit</a>
+      <a href="javascript:displayPlayers($('#player_selection').val())" class="btn btn-success" role="button">Submit</a>
     </div>
   </div>
   <div class="container">
@@ -85,7 +85,7 @@
           <th class="col-sm-1">Week</th>
           <th class="col-sm-2">Opponent</th>
           <th class="col-sm-1">Home</th>
-          <th class="col-sm-1">Attempts</th>
+          <th class="col-sm-1">Attempts</a></th>
           <th class="col-sm-1">Completions</th>
           <th class="col-sm-1">Completion%</th>
           <th class="col-sm-1">Yards</th>
@@ -127,7 +127,7 @@
 </body>
 </html>
 <script>
-  function display_players(name) {
+  function displayPlayers(name) {
       $.post('/update_player', {
           name: name
       }).done(function(update_player) {
@@ -157,9 +157,9 @@
           }
       })
   }
-  function table_onload(num_logs) {
+  function tableOnload(numLogs) {
       for (var i = 0; i < 100; i++) {
-          if (i < num_logs) {
+          if (i < numLogs) {
               $('#log' + i).show();
           } else {
               $('#log' + i).hide()
