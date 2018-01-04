@@ -9,7 +9,7 @@
 
 3. Setup PostgreSQL database
 - Download and open PostgreSQL. Follow instructions on https://www.postgresql.org/download/
-- Set Port 5430
+- Set your database port 5430. Or open config/config_dev.py and change SQLALCHEMY_DATABASE_SETTINGS['PORT'] to your postgreSQL port number.
 - If on Ubuntu
     - $ sudo su - postgres
     - $ psql
@@ -27,6 +27,6 @@
 5. Run application
 - python manage.py run
 - Open browser and go to http://player.lvh.me:5000/
-- Select player and click 'Submit' button
+- Select player and click 'Refresh' button
 
 For more information or help, email rzwdsg@gmail.com
