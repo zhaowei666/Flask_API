@@ -62,15 +62,12 @@ def player_info(name):
             'numLogs': len(game_logs)}
 
 
-def player_selection():
+def index():
     players = g.session.query(Player).all()
     names = [x.name for x in players]
-    player = g.session.query(Player).first()
-    res = player_info(player.name)
     return render_template('player.html',
-                           title='players',
+                           title='Player Profile',
                            names=names,
-                           info=res
                            )
 
 
