@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body onload="tableOnload('{{ info['num_logs'] }}')">
+<body onload="tableOnload()">
   <div class="container">
     <div style="width: 50%; float:left">
       <h2>Select player</h2>
@@ -16,7 +16,7 @@
           <option>{{ name }}</option>
         {% endfor %}
       </select>
-      <a href="javascript:displayPlayers($('#player_selection').val())" class="btn btn-success" role="button">Submit</a>
+      <a href="javascript:updatePlayers($('#player_selection').val())" class="btn btn-success" role="button">Submit</a>
     </div>
   </div>
   <div class="container">
@@ -24,19 +24,19 @@
     <table class="table">
       <tr>
         <th class="col-sm-3 info">Name</th>
-        <td class="col-sm-7 active"><span id="name">{{ info['profile']['name'] }}</span></td>
+        <td class="col-sm-7 active"><span id="name"></span></td>
       </tr>
       <tr>
         <th class="info">Player ID</th>
-        <td><span id="id">{{ info['profile']['id'] }}</span></td>
+        <td><span id="id"></span></td>
       </tr>
       <tr>
         <th class="info">Date of Birth</th>
-        <td class="active"><span id="date_of_birth">{{ info['profile']['date_of_birth'] }}</span></td>
+        <td class="active"><span id="date_of_birth"></span></td>
       </tr>
       <tr>
         <th class="info">Drafted</th>
-        <td><span id="draft">{{ info['profile']['draft'] }}</span></td>
+        <td><span id="draft"></span></td>
       </tr>
     </table>
   </div>
@@ -46,8 +46,8 @@
       <thead>
         <tr class="info">
           <th class="col-sm-1"></th>
-          <th class="col-sm-1">Attempts</th>
-          <th class="col-sm-1">Completions</th>
+          <th class="col-sm-1">Attempts</a></th>
+          <th class="col-sm-1">Completions</a></th>
           <th class="col-sm-1">Completion%</th>
           <th class="col-sm-1">Yards</th>
           <th class="col-sm-1">TouchDowns</th>
@@ -57,21 +57,21 @@
       <tbody>
         <tr>
           <th>Season</th>
-          <td id="attempts_all">{{ info['stats']['all']['attempts'] }}</td>
-          <td id="completions_all">{{ info['stats']['all']['completions'] }}</td>
-          <td id="completion_rate_all">{{ info['stats']['all']['completion_rate'] }}</td>
-          <td id="yards_all">{{ info['stats']['all']['yards'] }}</td>
-          <td id="touchdowns_all">{{ info['stats']['all']['touchdowns'] }}</td>
-          <td id="interceptions_all">{{ info['stats']['all']['interceptions'] }}</td>
+          <td id="attempts_all"></td>
+          <td id="completions_all"></td>
+          <td id="completion_rate_all"></td>
+          <td id="yards_all"></td>
+          <td id="touchdowns_all"></td>
+          <td id="interceptions_all"></td>
         </tr>
         <tr>
           <th>Match Average</th>
-          <td id="attempts_match">{{ info['stats']['match']['attempts'] }}</td>
-          <td id="completions_match">{{ info['stats']['match']['completions'] }}</td>
+          <td id="attempts_match"></td>
+          <td id="completions_match"></td>
           <td id="completion_rate_match"></td>
-          <td id="yards_match">{{ info['stats']['match']['yards'] }}</td>
-          <td id="touchdowns_match">{{ info['stats']['match']['touchdowns'] }}</td>
-          <td id="interceptions_match">{{ info['stats']['match']['interceptions'] }}</td>
+          <td id="yards_match"></td>
+          <td id="touchdowns_match"></td>
+          <td id="interceptions_match"></td>
         </tr>
       </tbody>
 
@@ -81,45 +81,31 @@
     <h2>Game Log</h2>
     <table class="table table-striped">
       <thead>
-        <tr class="info">
-          <th class="col-sm-1">Week</th>
-          <th class="col-sm-2">Opponent</th>
-          <th class="col-sm-1">Home</th>
-          <th class="col-sm-1">Attempts</a></th>
-          <th class="col-sm-1">Completions</th>
-          <th class="col-sm-1">Completion%</th>
-          <th class="col-sm-1">Yards</th>
-          <th class="col-sm-1">TouchDowns</th>
-          <th class="col-sm-1">Interceptions</th>
+        <tr class="table-info">
+          <th class="col-sm-1"><a href="javascript:sortColumn('week')" style="color:black">Week</a></th>
+          <th class="col-sm-2"><a href="javascript:sortColumn('opponent')" style="color:black">Opponent</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('home')" style="color:black">Home</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('attempts')" style="color:black">Attempts</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completions')" style="color:black">Completions</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completion_rate')" style="color:black">Completion%</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('yards')" style="color:black">Yards</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('touchdowns')" style="color:black">TouchDowns</a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('interceptions')" style="color:black">Interceptions</a></th>
         </tr>
       </thead>
       <tbody>
         {% for i in range(100)%}
-          {% if i < info['num_logs'] %}
-            <tr id="log{{ i }}">
-              <td><span id="week_{{ i }}">{{ info['game_logs'][i]['week'] }}</span></td>
-              <td><span id="opponent_{{ i }}">{{ info['game_logs'][i]['opponent'] }}</span></td>
-              <td><span id="home_{{ i }}">{{ info['game_logs'][i]['home'] }}</span></td>
-              <td><span id="attempts_{{ i }}">{{ info['game_logs'][i]['attempts'] }}</span></td>
-              <td><span id="completions_{{ i }}">{{ info['game_logs'][i]['completions'] }}</span></td>
-              <td><span id="completion_rate">{{ info['game_logs'][i]['completion_rate'] }}</span></td>
-              <td><span id="yards_{{ i }}">{{ info['game_logs'][i]['yards'] }}</span></td>
-              <td><span id="touchdowns_{{ i }}">{{ info['game_logs'][i]['touchdowns'] }}</span></td>
-              <td><span id="interceptions_{{ i }}">{{ info['game_logs'][i]['interceptions'] }}</span></td>
-            </tr>
-          {% else %}
-             <tr id="log{{ i }}">
-              <th><span id="week_{{ i }}"></span></th>
-              <th><span id="opponent_{{ i }}"></span></th>
-              <th><span id="home_{{ i }}"></span></th>
-              <th><span id="attempts_{{ i }}"></span></th>
-              <th><span id="completions_{{ i }}"></span></th>
-              <th><span id="completion_rate"></span></th>
-              <th><span id="yards_{{ i }}"></span></th>
-              <th><span id="touchdowns_{{ i }}"></span></th>
-              <th><span id="interceptions_{{ i }}"></span></th>
-             </tr>
-          {% endif %}
+          <tr id="log{{ i }}">
+            <td><span id="week_{{ i }}"></span></td>
+            <td><span id="opponent_{{ i }}"></span></td>
+            <td><span id="home_{{ i }}"></span></td>
+            <td><span id="attempts_{{ i }}"></span></td>
+            <td><span id="completions_{{ i }}"></span></td>
+            <td><span id="completion_rate_{{ i }}"></span></td>
+            <td><span id="yards_{{ i }}"></span></td>
+            <td><span id="touchdowns_{{ i }}"></span></td>
+            <td><span id="interceptions_{{ i }}"></span></td>
+          </tr>
         {% endfor %}
       </tbody>
     </table>
@@ -127,43 +113,91 @@
 </body>
 </html>
 <script>
-  function displayPlayers(name) {
-      $.post('/update_player', {
-          name: name
-      }).done(function(update_player) {
-          for (var x in update_player['profile']) {
-              $('#'+x).text(update_player['profile'][x])
+    var profile;
+    var stats;
+    var gameLogs;
+    var numLogs;
+    var sorting = {
+        column:'week',
+        ascending:true
+    };
+    function updateProfile () {
+        for (var x in profile) {
+                $('#'+x).text(profile[x]);
+        }
+    }
+    function updateStats () {
+        for (var x in stats['all']) {
+            $('#' + x + '_all').text(stats['all'][x]);
+        }
+        for (var x in stats['match']) {
+            $('#' + x + '_match').text(stats['match'][x]);
+        }
+    }
+    function updateGameLogs () {
+        for (var i=0; i < 100; i++) {
+            if (i < numLogs) {
+                $('#log' + i).show();
+                for (var x in gameLogs[i]) {
+                    $('#'+x+'_'+i).text(gameLogs[i][x]);
+                }
+            } else {
+                $('#log' + i).hide();
+            }
+        }
+    }
+    function updatePlayers (name) {
+        $.post('/update_player', {
+            name: name
+        }).done(function (info) {
+            profile = info['profile'];
+            stats = info['stats'];
+            gameLogs = info['gameLogs'];
+            numLogs = info['numLogs'];
+            updateProfile();
+            updateStats();
+            updateGameLogs();
+        })
+    }
+
+    function tableOnload ( ) {
+        var infoDict = JSON.parse('{{ info | tojson | safe}}');
+        profile = infoDict.profile;
+        stats = infoDict.stats;
+        gameLogs = infoDict.gameLogs;
+        numLogs = infoDict.numLogs;
+        updateProfile();
+        updateStats();
+        updateGameLogs();
+    }
+
+    var byProperty = function (prop, reverse) {
+        return function(a, b) {
+          if (typeof a[prop] === 'number') {
+            return reverse ? (a[prop] - b[prop]) : (b[prop] - a[prop]);
           }
 
-          for (var x in update_player['stats']['all']) {
-              $('#'+x+'_all').text(update_player['stats']['all'][x])
-          }
-          for (var x in update_player['stats']['match']) {
-              $('#'+x+'_match').text(update_player['stats']['match'][x])
+          if (a[prop] < b[prop]) {
+            return reverse ? 1 : -1;
           }
 
-          for (var i=0; i < 100; i++) {
-              if (i < update_player['num_logs']) {
-                  $('#log' + i).show();
-                  if (i % 2 == 1) {
-                      $('#log' + i).removeClass().addClass('active')
-                  }
-                  for (var x in update_player['game_logs'][i]) {
-                      $('#'+x+'_'+i).text(update_player['game_logs'][i][x])
-                  }
-              } else {
-                  $('#log' + i).hide()
-              }
+          if (a[prop] > b[prop]) {
+            return reverse ? -1 : 1;
           }
-      })
-  }
-  function tableOnload(numLogs) {
-      for (var i = 0; i < 100; i++) {
-          if (i < numLogs) {
-              $('#log' + i).show();
-          } else {
-              $('#log' + i).hide()
-          }
-      }
-  }
+
+        return 0;
+        };
+    };
+    function sortColumn (column) {
+        var ascending = true;
+        if (sorting.column == column && sorting.ascending) {
+            ascending = false;
+        }
+        gameLogs.sort(byProperty(column, ascending));
+        updateGameLogs();
+        sorting = {
+            column:column,
+            ascending:ascending
+        };
+    }
 </script>

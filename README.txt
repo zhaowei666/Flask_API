@@ -10,6 +10,11 @@
 3. Setup PostgreSQL database
 - Download and open PostgreSQL. Follow instructions on https://www.postgresql.org/download/
 - Set Port 5430
+- If on Ubuntu
+    - $ sudo su - postgres
+    - $ psql
+- If on Mac
+    - Open PostgreSQL application and click start button
 - $ CREATE DATABASE player_db;
 - $ CREATE USER dev_user WITH PASSWORD 'dev_password';
 - $ GRANT ALL PRIVILEGES ON DATABASE "dev_db" to dev_user;

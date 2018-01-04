@@ -58,8 +58,8 @@ def player_info(name):
 
     return {'profile': profile,
             'stats': {'all': stats_all, 'match': stats_match},
-            'game_logs': game_logs,
-            'num_logs': len(game_logs)}
+            'gameLogs': game_logs,
+            'numLogs': len(game_logs)}
 
 
 def player_selection():
