@@ -81,16 +81,16 @@
     <h2>Game Log</h2>
     <table class="table table-striped">
       <thead>
-        <tr class="table-info">
-          <th class="col-sm-1"><a href="javascript:sortColumn('week')" style="color:black">Week</a></th>
-          <th class="col-sm-2"><a href="javascript:sortColumn('opponent')" style="color:black">Opponent</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('home')" style="color:black">Home</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('attempts')" style="color:black">Attempts</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('completions')" style="color:black">Completions</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('completion_rate')" style="color:black">Completion%</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('yards')" style="color:black">Yards</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('touchdowns')" style="color:black">TouchDowns</a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('interceptions')" style="color:black">Interceptions</a></th>
+        <tr class="table-info" id="log_header">
+          <th class="col-sm-1"><a href="javascript:sortColumn('week')" style="color:black">Week<span class="caret" id="caret_week" style="display:none"></span></a></th>
+          <th class="col-sm-2"><a href="javascript:sortColumn('opponent')" style="color:black">Opponent<span class="caret" id="caret_opponent" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('home')" style="color:black">Home<span class="caret" id="caret_home" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('attempts')" style="color:black">Attempts<span class="caret" id="caret_attempts" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completions')" style="color:black">Completions<span class="caret" id="caret_completions" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completion_rate')" style="color:black">Completion%<span class="caret" id="caret_completion_rate" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('yards')" style="color:black">Yards<span class="caret" id="caret_yards" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('touchdowns')" style="color:black">TouchDowns<span class="caret" id="caret_touchdowns" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('interceptions')" style="color:black">Interceptions<span class="caret" id="caret_interceptions" style="display:none"></span></a></th>
         </tr>
       </thead>
       <tbody>
@@ -169,6 +169,7 @@
         updateProfile();
         updateStats();
         updateGameLogs();
+        $('#caret_week').show();
     }
 
     var byProperty = function (prop, reverse) {
@@ -195,9 +196,16 @@
         }
         gameLogs.sort(byProperty(column, ascending));
         updateGameLogs();
+        $('#caret_' + sorting.column).hide();
+        $('#caret_' + column).show();
+        $('#log_header').removeClass('dropup');
+        if (ascending) {
+            $('#log_header').addClass('dropup');
+        }
         sorting = {
             column:column,
             ascending:ascending
         };
+
     }
 </script>
