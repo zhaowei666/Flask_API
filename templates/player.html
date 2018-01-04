@@ -6,45 +6,58 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    #log_header a:link {
+      color: #262626;
+    }
+  </style>
 </head>
-<body onload="tableOnload()">
-  <div class="container">
-    <div style="width: 50%; float:left">
-      <h2>Select player</h2>
-      <select class="form-control" id="player_selection">
-        {% for name in names %}
-          <option>{{ name }}</option>
-        {% endfor %}
-      </select>
-      <a href="javascript:updatePlayers($('#player_selection').val())" class="btn btn-success" role="button">Submit</a>
+<body onload="tableOnload()" class="bg-secondary">
+  <div class="container" style="margin-bottom: 20px">
+    <div style="width: 20%; float:left">
+      <div style="margin-bottom: 10px">
+        <h3>Select player</h3>
+        <select class="form-control" id="player_selection">
+          {% for name in names %}
+            <option>{{ name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div style="text-align: center" style="padding-top: 10px">
+        <a href="javascript:updatePlayers($('#player_selection').val())" class="btn btn-info" role="button" style="width: 50%">Refresh</a>
+      </div>
     </div>
   </div>
   <div class="container">
-    <h2>Profile</h2>
     <table class="table">
+      <tr style="background-color: #464646; color: white">
+        <th colspan="2">PROFILE</th>
+      </tr>
       <tr>
-        <th class="col-sm-3 info">Name</th>
+        <th class="col-sm-3" style="background-color: #999999; color: white">Name</th>
         <td class="col-sm-7 active"><span id="name"></span></td>
       </tr>
       <tr>
-        <th class="info">Player ID</th>
+        <th style="background-color: #999999; color: white">Player ID</th>
         <td><span id="id"></span></td>
       </tr>
       <tr>
-        <th class="info">Date of Birth</th>
+        <th style="background-color: #999999; color: white">Date of Birth</th>
         <td class="active"><span id="date_of_birth"></span></td>
       </tr>
       <tr>
-        <th class="info">Drafted</th>
+        <th style="background-color: #999999; color: white">Drafted</th>
         <td><span id="draft"></span></td>
       </tr>
     </table>
   </div>
   <div class="container">
-    <h2>Stats</h2>
     <table class="table table-striped table-condensed">
       <thead>
-        <tr class="info">
+        <tr style="background-color: #464646; color: white">
+          <th colspan="7">STATS</th>
+        </tr>
+        <tr id="stats_header" style="background-color: #cccccc; color: #262626">
           <th class="col-sm-1"></th>
           <th class="col-sm-1">Attempts</a></th>
           <th class="col-sm-1">Completions</a></th>
@@ -78,19 +91,21 @@
     </table>
   </div>
   <div class="container">
-    <h2>Game Log</h2>
     <table class="table table-striped">
       <thead>
-        <tr class="table-info" id="log_header">
-          <th class="col-sm-1"><a href="javascript:sortColumn('week')" style="color:black">Week<span class="caret" id="caret_week" style="display:none"></span></a></th>
-          <th class="col-sm-2"><a href="javascript:sortColumn('opponent')" style="color:black">Opponent<span class="caret" id="caret_opponent" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('home')" style="color:black">Home<span class="caret" id="caret_home" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('attempts')" style="color:black">Attempts<span class="caret" id="caret_attempts" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('completions')" style="color:black">Completions<span class="caret" id="caret_completions" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('completion_rate')" style="color:black">Completion%<span class="caret" id="caret_completion_rate" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('yards')" style="color:black">Yards<span class="caret" id="caret_yards" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('touchdowns')" style="color:black">TouchDowns<span class="caret" id="caret_touchdowns" style="display:none"></span></a></th>
-          <th class="col-sm-1"><a href="javascript:sortColumn('interceptions')" style="color:black">Interceptions<span class="caret" id="caret_interceptions" style="display:none"></span></a></th>
+        <tr style="background-color: #464646; color: white">
+          <th colspan="9">GAME LOGS</th>
+        </tr>
+        <tr style="background-color: #cccccc" id="log_header">
+          <th class="col-sm-1"><a href="javascript:sortColumn('week')">Week<span class="caret" id="caret_week" style="display:none"></span></a></th>
+          <th class="col-sm-2"><a href="javascript:sortColumn('opponent')">Opponent<span class="caret" id="caret_opponent" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('home')">Home<span class="caret" id="caret_home" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('attempts')">Attempts<span class="caret" id="caret_attempts" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completions')">Completions<span class="caret" id="caret_completions" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('completion_rate')">Completion%<span class="caret" id="caret_completion_rate" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('yards')">Yards<span class="caret" id="caret_yards" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('touchdowns')">TouchDowns<span class="caret" id="caret_touchdowns" style="display:none"></span></a></th>
+          <th class="col-sm-1"><a href="javascript:sortColumn('interceptions')">Interceptions<span class="caret" id="caret_interceptions" style="display:none"></span></a></th>
         </tr>
       </thead>
       <tbody>
@@ -170,6 +185,7 @@
         updateStats();
         updateGameLogs();
         $('#caret_week').show();
+        $('#log_header').addClass('dropup');
     }
 
     var byProperty = function (prop, reverse) {
