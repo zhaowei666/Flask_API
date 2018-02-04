@@ -1,0 +1,502 @@
+[
+    {
+        "quote": "A man who doesn't spend time with his family can never be a real man", 
+        "movie_year": "1972", 
+        "movie_name": "The Godfather"
+    }, 
+    {
+        "quote": "I'm as mad as hell and I'm not gonna take this anymore!", 
+        "movie_year": "1976", 
+        "movie_name": "Network"
+    }, 
+    {
+        "quote": "Champagne for my real friends, real pain for my sham friends!", 
+        "movie_year": "2002", 
+        "movie_name": "25th Hour"
+    }, 
+    {
+        "quote": "If you think of yourself as funny, you become tragic.", 
+        "movie_year": "1971", 
+        "movie_name": "Minnie and Moskowitz"
+    }, 
+    {
+        "quote": "As far back as I can remember, I always wanted to be a gangster", 
+        "movie_year": "1990", 
+        "movie_name": "Goodfellas"
+    }, 
+    {
+        "quote": "What we've got here is ... failure to communicate", 
+        "movie_year": "1967", 
+        "movie_name": "Cool Hand Luke"
+    }, 
+    {
+        "quote": "You don't make up for your sins in church. You do it in the streets", 
+        "movie_year": "1973", 
+        "movie_name": "Mean Streets"
+    }, 
+    {
+        "quote": "I was a better man with you, as a woman... than I ever was with a woman, as a man.", 
+        "movie_year": "1982", 
+        "movie_name": "Tootsie"
+    }, 
+    {
+        "quote": "Madness! Madness!", 
+        "movie_year": "1957", 
+        "movie_name": "The Bridge on the River Kwai"
+    }, 
+    {
+        "quote": "After fifteen minutes I wanted to marry her, and after half an hour I completely gave up the idea of stealing her purse.", 
+        "movie_year": "1969", 
+        "movie_name": "Take the Money and Run"
+    }, 
+    {
+        "quote": "Not only are you rich, but you want to be loved as if you are poor.", 
+        "movie_year": "1945", 
+        "movie_name": "Children of Paradise"
+    }, 
+    {
+        "quote": "Is it safe?", 
+        "movie_year": "1976", 
+        "movie_name": "Marathon Man"
+    }, 
+    {
+        "quote": "You get some gorgeous eyes, d'you know...", 
+        "movie_year": "1938", 
+        "movie_name": "Port of Shadows"
+    }, 
+    {
+        "quote": "I know who I am!", 
+        "movie_year": "1987", 
+        "movie_name": "Angel Heart"
+    }, 
+    {
+        "quote": "Paris is small for those who share so great a passion as ours.", 
+        "movie_year": "1945", 
+        "movie_name": "Children of Paradise"
+    }, 
+    {
+        "quote": "You were a tomato! A tomato doesn't have a logic, a tomato can't move!", 
+        "movie_year": "1982", 
+        "movie_name": "Tootsie"
+    }, 
+    {
+        "quote": "Don Corleone", 
+        "movie_year": "1972", 
+        "movie_name": "The Godfather"
+    }, 
+    {
+        "quote": "There is something very important we need to do as soon as possible.\" \"What's that?\" \"Fuck!", 
+        "movie_year": "1999", 
+        "movie_name": "Eyes Wide Shut"
+    }, 
+    {
+        "quote": "I love you. I've loved you since the first moment I saw you. I guess maybe I've even loved you before I saw you.", 
+        "movie_year": "1951", 
+        "movie_name": "A Place in the Sun"
+    }, 
+    {
+        "quote": "When you side with a man, you stay with him. And if you can't do that, you're like some animal, you're finished.", 
+        "movie_year": "1969", 
+        "movie_name": "The Wild Bunch"
+    }, 
+    {
+        "quote": "I want that you tell me... was she feeble-minded? My mother! Was she feeble-minded? Was she?", 
+        "movie_year": "1961", 
+        "movie_name": "Judgment at Nuremberg"
+    }, 
+    {
+        "quote": "You're out of order! You're out of order! The whole trial is out of order! They're out of order!", 
+        "movie_year": "1979", 
+        "movie_name": "...and justice for all."
+    }, 
+    {
+        "quote": "Remember when you was a kid and you would spend the whole year waiting for summer vacation and when it finally came it would fly by just like that? It's funny, Jimmy, life has a way of flying by faster than any old summer vacation really fucking does.", 
+        "movie_year": "1995", 
+        "movie_name": "Things to Do in Denver When You're Dead"
+    }, 
+    {
+        "quote": "Time. Time. What is time? Swiss manufacture it. French hoard it. Italians squander it. Americans say it is money. Hindus say it does not exist. Do you know what I say? I say time is a crook.\" (O", 
+        "movie_year": "1953", 
+        "movie_name": "Beat the Devil"
+    }, 
+    {
+        "quote": "Eddie, you're a born loser", 
+        "movie_year": "1961", 
+        "movie_name": "The Hustler"
+    }, 
+    {
+        "quote": "Forget about it", 
+        "movie_year": "1997", 
+        "movie_name": "Donnie Brasco"
+    }, 
+    {
+        "quote": "Once you start compromising your thoughts, you're a candidate for mediocrity", 
+        "movie_year": "1988", 
+        "movie_name": "Biloxi Blues"
+    }, 
+    {
+        "quote": "You sho' is ugly!", 
+        "movie_year": "1985", 
+        "movie_name": "The Color Purple"
+    }, 
+    {
+        "quote": "Why don't you squeeze a watermelon out of the hole of an opening of a lemon and see how hot you look?", 
+        "movie_year": "1989", 
+        "movie_name": "Look Who's Talking"
+    }, 
+    {
+        "quote": "It ain't about how hard ya hit. It's about how hard you can get it and keep moving forward. How much you can take and keep moving forward. That's how winning is done!", 
+        "movie_year": "2006", 
+        "movie_name": "Rocky Balboa"
+    }, 
+    {
+        "quote": "I'll remember you, honey. You're the one that got away", 
+        "movie_year": "1963", 
+        "movie_name": "Hud"
+    }, 
+    {
+        "quote": "I'm Godzilla! You are JAPAN!", 
+        "movie_year": "1995", 
+        "movie_name": "Things to Do in Denver When You're Dead"
+    }, 
+    {
+        "quote": "Merciful death, how you love your precious guilt", 
+        "movie_year": "1994", 
+        "movie_name": "Interview with the Vampire: The Vampire Chronicles"
+    }, 
+    {
+        "quote": "In Switzerland they had brotherly love - they had 500 years of democracy and peace, and what did that produce? The cuckoo clock.", 
+        "movie_year": "1949", 
+        "movie_name": "The Third Man"
+    }, 
+    {
+        "quote": "You are the greatest lover I've ever had.\" \"Well, I practice a lot when I'm alone.", 
+        "movie_year": "1975", 
+        "movie_name": "Love and Death"
+    }, 
+    {
+        "quote": "Elaaaaaaine! Elaaaaaaine!", 
+        "movie_year": "1967", 
+        "movie_name": "The Graduate"
+    }, 
+    {
+        "quote": "I know, you did send me back to the future, but I'm back -- I'm back FROM the future ...", 
+        "movie_year": "1989", 
+        "movie_name": "Back to the Future Part II"
+    }, 
+    {
+        "quote": "You want me to hold the chicken, huh?\" \"I want you to hold it between your knees", 
+        "movie_year": "1970", 
+        "movie_name": "Five Easy Pieces"
+    }, 
+    {
+        "quote": "Granny Snuff, ever been snuffed out?", 
+        "movie_year": "1992", 
+        "movie_name": "Man Bites Dog"
+    }, 
+    {
+        "quote": "Don't ever take sides with anyone against the Family again. Ever.", 
+        "movie_year": "1972", 
+        "movie_name": "The Godfather"
+    }, 
+    {
+        "quote": "The greatest trick the devil ever pulled was convincing the world he didn't exist ... and like that, he's gone\" (Roger 'Verbal", 
+        "movie_year": "1995", 
+        "movie_name": "The Usual Suspects"
+    }, 
+    {
+        "quote": "Hey, Solomon, Sliman... Are you guys cousins?", 
+        "movie_year": "1973", 
+        "movie_name": "The Mad Adventures of 'Rabbi' Jacob"
+    }, 
+    {
+        "quote": "At least you'll never be a vegetable - even artichokes have hearts", 
+        "movie_year": "2001", 
+        "movie_name": "Am\u00e9lie"
+    }, 
+    {
+        "quote": "Once I buried two Arabs in a wall over there... Facing Mecca, of course.", 
+        "movie_year": "1992", 
+        "movie_name": "Man Bites Dog"
+    }, 
+    {
+        "quote": "You talkin' to me?", 
+        "movie_year": "1976", 
+        "movie_name": "Taxi Driver"
+    }, 
+    {
+        "quote": "You can have my answer now, if you like. My final offer is this: nothing. Not even the fee for the gaming license, which I would appreciate if you would put up personally.", 
+        "movie_year": "1974", 
+        "movie_name": "The Godfather: Part II"
+    }, 
+    {
+        "quote": "Solomon, you're Jewish?", 
+        "movie_year": "1973", 
+        "movie_name": "The Mad Adventures of 'Rabbi' Jacob"
+    }, 
+    {
+        "quote": "Wait. You dropped your phony dog poo\" \"What phony dog poo?", 
+        "movie_year": "1984", 
+        "movie_name": "Top Secret!"
+    }, 
+    {
+        "quote": "It's easier to die for a woman than to find one worth dying for.", 
+        "movie_year": "1996", 
+        "movie_name": "Ridicule"
+    }, 
+    {
+        "quote": "Finance is a gun. Politics is knowing when to pull the trigger", 
+        "movie_year": "1990", 
+        "movie_name": "The Godfather: Part III"
+    }, 
+    {
+        "quote": "We're judged by the company we keep.\" \"A misjudgment. Judas kept excellent company.", 
+        "movie_year": "1996", 
+        "movie_name": "Ridicule"
+    }, 
+    {
+        "quote": "Everybody be cool, this is a robbery!\" \"Any of you fuckin' pricks move and I'll execute every last fucking one of ya ...", 
+        "movie_year": "1994", 
+        "movie_name": "Pulp Fiction"
+    }, 
+    {
+        "quote": "Just one more thing Sofie. Is she aware her daughter is alive?", 
+        "movie_year": "2003", 
+        "movie_name": "Kill Bill: Vol. 1"
+    }, 
+    {
+        "quote": "Hello. My name is Inigo Montoya. You killed my father. Prepare to die", 
+        "movie_year": "1987", 
+        "movie_name": "The Princess Bride"
+    }, 
+    {
+        "quote": "These go to eleven", 
+        "movie_year": "1984", 
+        "movie_name": "This Is Spinal Tap"
+    }, 
+    {
+        "quote": "I said 'Bizarre bizarre'? How bizarre. Why would I have said, 'Bizarre, bizarre'?\" \"I assure you, my dear cousin, that you said 'Bizarre bizarre'.\" \"Did I say 'Bizarre'? How bizarre...", 
+        "movie_year": "1937", 
+        "movie_name": "Bizarre, Bizarre"
+    }, 
+    {
+        "quote": "Hey, amigo! You know you have a face beautiful enough to be worth $2000?\" \"Yeah, but you don't look like the one who'd collect it.", 
+        "movie_year": "1966", 
+        "movie_name": "The Good, the Bad and the Ugly"
+    }, 
+    {
+        "quote": "Yo Adrian, I did it!", 
+        "movie_year": "1979", 
+        "movie_name": "Rocky II"
+    }, 
+    {
+        "quote": "Noodles, I slipped", 
+        "movie_year": "1984", 
+        "movie_name": "Once Upon a Time in America"
+    }, 
+    {
+        "quote": "You call that a knife? This is a knife!", 
+        "movie_year": "1986", 
+        "movie_name": "Crocodile Dundee"
+    }, 
+    {
+        "quote": "I see dead people", 
+        "movie_year": "1999", 
+        "movie_name": "The Sixth Sense"
+    }, 
+    {
+        "quote": "See you at the party, Richter!", 
+        "movie_year": "1990", 
+        "movie_name": "Total Recall"
+    }, 
+    {
+        "quote": "All right, Mr. De Mille, I'm ready for my close-up", 
+        "movie_year": "1950", 
+        "movie_name": "Sunset Blvd."
+    }, 
+    {
+        "quote": "Fasten your seatbelts, it's going to be a bumpy night", 
+        "movie_year": "1950", 
+        "movie_name": "All About Eve"
+    }, 
+    {
+        "quote": "I wish you was a wishing well, so I could tie a bucket to you and sink you", 
+        "movie_year": "1931", 
+        "movie_name": "The Public Enemy"
+    }, 
+    {
+        "quote": "Play 'Misty' for me", 
+        "movie_year": "1971", 
+        "movie_name": "Play Misty for Me"
+    }, 
+    {
+        "quote": "A floor-rag... How beautiful! I'm so happy!\" \"It's a sweater.", 
+        "movie_year": "1982", 
+        "movie_name": "Le p\u00e8re No\u00ebl est une ordure"
+    }, 
+    {
+        "quote": "Why am I Mr. Pink?", 
+        "movie_year": "1992", 
+        "movie_name": "Reservoir Dogs"
+    }, 
+    {
+        "quote": "Things would be much as they are now. Perhaps. Except maybe I wouldn't have named our son Elvis.", 
+        "movie_year": "1993", 
+        "movie_name": "True Romance"
+    }, 
+    {
+        "quote": "You know...hostility is like a psychic boomerang.", 
+        "movie_year": "1986", 
+        "movie_name": "Howard the Duck"
+    }, 
+    {
+        "quote": "Non!", 
+        "movie_year": "1976", 
+        "movie_name": "Silent Movie"
+    }, 
+    {
+        "quote": "I can feel that tonight ... I'll make it with her", 
+        "movie_year": "1979", 
+        "movie_name": "Les bronz\u00e9s font du ski"
+    }, 
+    {
+        "quote": "Hasta la vista, baby", 
+        "movie_year": "1991", 
+        "movie_name": "Terminator 2"
+    }, 
+    {
+        "quote": "Regulators!", 
+        "movie_year": "1988", 
+        "movie_name": "Young Guns"
+    }, 
+    {
+        "quote": "Favor gonna kill you faster than a bullet", 
+        "movie_year": "1993", 
+        "movie_name": "Carlito's Way"
+    }, 
+    {
+        "quote": "I wanted to destroy something beautiful", 
+        "movie_year": "1999", 
+        "movie_name": "Fight Club"
+    }, 
+    {
+        "quote": "Now let me correct you on a couple of things, OK? Aristotle was not Belgian. The central message of Buddhism is not \"Every man for himself.\" And the London Underground is not a political movement.", 
+        "movie_year": "1988", 
+        "movie_name": "A Fish Called Wanda"
+    }, 
+    {
+        "quote": "They do taste home-made! Hand-made, and rolled under the armpits.", 
+        "movie_year": "1982", 
+        "movie_name": "Le p\u00e8re No\u00ebl est une ordure"
+    }, 
+    {
+        "quote": "Remember who you are", 
+        "movie_year": "1994", 
+        "movie_name": "The Lion King"
+    }, 
+    {
+        "quote": "But this ship can't sink!\" \"She's made of iron, sir! I assure you, she can... and she will. It is a mathematical certainty.", 
+        "movie_year": "1997", 
+        "movie_name": "Titanic"
+    }, 
+    {
+        "quote": "Bingo!", 
+        "movie_year": "1988", 
+        "movie_name": "The Naked Gun: From the Files of Police Squad!"
+    }, 
+    {
+        "quote": "Look Bernard... I think you and I have the same problem: the point is that we cannot really rely on our looks, especially you. So let me give you a piece of advice: forget you don't stand a chance, and just go for it! Who knows, it might work out of a missunderstanding!", 
+        "movie_year": "1979", 
+        "movie_name": "Les bronz\u00e9s font du ski"
+    }, 
+    {
+        "quote": "I hate to speak ill of people. Such a nice person indeed!", 
+        "movie_year": "1982", 
+        "movie_name": "Le p\u00e8re No\u00ebl est une ordure"
+    }, 
+    {
+        "quote": "Nuskat Muss! Nuskat Muss, Herr Muller!", 
+        "movie_year": "1966", 
+        "movie_name": "The Restaurant"
+    }, 
+    {
+        "quote": "Atmosphere? Atmosphere? Do I look like an atmosphere?", 
+        "movie_year": "1938", 
+        "movie_name": "H\u00f4tel du Nord"
+    }, 
+    {
+        "quote": "Have you ever seen a grown man naked?", 
+        "movie_year": "1980", 
+        "movie_name": "Airplane!"
+    }, 
+    {
+        "quote": "We're both part of the same hypocrisy, senator, but never think it applies to my family.", 
+        "movie_year": "1974", 
+        "movie_name": "The Godfather: Part II"
+    }, 
+    {
+        "quote": "They was giving me ten thousand watts a day, you know, and I'm hot to trot! The next woman takes me on's gonna light up like a pinball machine and pay off in silver dollars!", 
+        "movie_year": "1975", 
+        "movie_name": "One Flew Over the Cuckoo's Nest"
+    }, 
+    {
+        "quote": "You owe me MONEY!", 
+        "movie_year": "1961", 
+        "movie_name": "The Hustler"
+    }, 
+    {
+        "quote": "After all, tomorrow is another day\" (Scarlett O", 
+        "movie_year": "1939", 
+        "movie_name": "Gone with the Wind"
+    }, 
+    {
+        "quote": "A man's got to know his limitations", 
+        "movie_year": "1973", 
+        "movie_name": "Magnum Force"
+    }, 
+    {
+        "quote": "Adriaaaaaaaaaaan!", 
+        "movie_year": "1976", 
+        "movie_name": "Rocky"
+    }, 
+    {
+        "quote": "Well, there wasn't enough time, Michael. There wasn't enough time\" \"We'll get there, Pop. We'll get there", 
+        "movie_year": "1972", 
+        "movie_name": "The Godfather"
+    }, 
+    {
+        "quote": "Party's over!", 
+        "movie_year": "1992", 
+        "movie_name": "Braindead"
+    }, 
+    {
+        "quote": "Run Forrest, Run!", 
+        "movie_year": "1994", 
+        "movie_name": "Forrest Gump"
+    }, 
+    {
+        "quote": "Althoooooough... I HAVE developed a greater appreciation for the female version of the human anatomy... ARROOOOO!", 
+        "movie_year": "1986", 
+        "movie_name": "Howard the Duck"
+    }, 
+    {
+        "quote": "Let me be frank!\" \"Can I still be Garth?", 
+        "movie_year": "1993", 
+        "movie_name": "Wayne's World 2"
+    }, 
+    {
+        "quote": "I'm more man than you'll ever be and more woman than you'll ever get", 
+        "movie_year": "1976", 
+        "movie_name": "Car Wash"
+    }, 
+    {
+        "quote": "Well, nobody's perfect", 
+        "movie_year": "1959", 
+        "movie_name": "Some Like It Hot"
+    }, 
+    {
+        "quote": "Wait a minute. I'm the leader, I say when it's the end ... It's the end.", 
+        "movie_year": "1970", 
+        "movie_name": "The AristoCats"
+    }
+]
