@@ -1,5 +1,8 @@
 from flask import g, render_template, request, jsonify, Response, json
 from models import Player, Draft, Game, PlayerPerformance, Team
+from webargs.flaskparser import use_args
+from webargs import fields
+import os
 import operator
 import numpy as np
 
@@ -74,4 +77,28 @@ def index():
 def update_player():
     player_name = request.form['name']
     return jsonify(player_info(player_name))
+
+
+quotes_args = {
+    'query': fields.String(required=True)
+}
+
+file_address = os.getcwd() + '/data_collection/quotes.json'
+
+with open(file_address, 'r') as f:
+    quotes = json.load(f)
+
+
+@use_args(quotes_args)
+def get_quotes(args):
+    query = args['query']
+    quote_hits = []
+    # TODO Spelling isoform finding is required
+    for quote in quotes:
+        if query in quote['quote']:
+            hit = "{} ---- Movie: {} ({})".format(quote['quote'],
+                                                  quote['movie_name'],
+                                                  quote['movie_year'])
+            quote_hits.append(hit)
+    return Response(json.dumps(quote_hits), status=200)
 
